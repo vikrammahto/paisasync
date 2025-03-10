@@ -1,5 +1,6 @@
 'use client';
 import OverviewCard from '@/components/OverviewCard';
+import OverviewMonthlyBudget from '@/components/OverviewMonthlyBudget';
 import { ArrowDown, ArrowUp, MoneyWavy } from '@phosphor-icons/react';
 import React from 'react';
 
@@ -46,6 +47,11 @@ const page = () => {
             extraAmount={data.extraAmount}
           />
         ))}
+      </div>
+      <div className="mt-3 grid grid-cols-1 lg:grid-cols-3">
+        <div className="rounded-xl border border-slate-200 p-3">
+          <OverviewMonthlyBudget />
+        </div>
       </div>
     </div>
   );
