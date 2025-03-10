@@ -1,5 +1,6 @@
 'use client';
 import OverviewCard from '@/components/OverviewCard';
+import OverviewDebt from '@/components/OverviewDebt';
 import OverviewMonthlyBudget from '@/components/OverviewMonthlyBudget';
 import { ArrowDown, ArrowUp, MoneyWavy } from '@phosphor-icons/react';
 import React from 'react';
@@ -48,9 +49,12 @@ const page = () => {
           />
         ))}
       </div>
-      <div className="mt-3 grid grid-cols-1 lg:grid-cols-3">
+      <div className="mt-3 grid grid-cols-1 lg:grid-cols-3 gap-3">
         <div className="rounded-xl border border-slate-200 p-3">
           <OverviewMonthlyBudget />
+        </div>
+        <div className="rounded-xl border border-slate-200 p-3 col-span-2">
+          <OverviewDebt />
         </div>
       </div>
     </div>
