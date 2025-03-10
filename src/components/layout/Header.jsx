@@ -14,6 +14,7 @@ const Header = () => {
             src={'/vikrammahto.jpeg'}
             width={100}
             height={100}
+            alt='Vikram Mahto'
             className="h-10 w-10 rounded-xl object-cover"
           />
           <div>
