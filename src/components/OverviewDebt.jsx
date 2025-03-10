@@ -50,8 +50,8 @@ const OverviewDebt = () => {
               textAlign: 'center',
             }}
           >
-            <div className="text-xs text-gray-500">Payoff Progress</div>
-            <div className="text-lg font-bold text-gray-800">
+            <div className="text-sm text-gray-500">Payoff Progress</div>
+            <div className="text-2xl font-bold text-gray-800">
               {paidPercentage}%
             </div>
           </div>
@@ -76,7 +76,7 @@ const OverviewDebt = () => {
               ></span>
               Remaining Amount
             </span>
-            <div className="font-semibold">₹{totalDebt.toLocaleString()}</div>
+            <div className="font-semibold">₹{remainingAmount.toLocaleString()}</div>
           </div>
           <div>
             <span className="flex items-center gap-1 text-gray-600">
