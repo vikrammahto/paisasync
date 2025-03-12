@@ -10,10 +10,10 @@ const page = () => {
     {
       title: 'Income',
       icon: <ArrowDown />,
-      amount: '65400',
+      amount: '235400',
       change: 3.5,
       changeType: 'up',
-      extraAmount: '2000',
+      extraAmount: '48300',
     },
     {
       title: 'Expenses',
@@ -34,8 +34,18 @@ const page = () => {
   ];
   return (
     <div>
-      <h1 className="font-medium">Good Morning, Vikram</h1>
-      <p className="text-xs text-slate-500">Your financial overview.</p>
+      <div className="space-y-1">
+        <h1 className="text-xl font-medium text-gray-900">
+          Welcome back, Vikram 👋
+        </h1>
+        <p className="text-sm text-gray-600">
+          Here's your financial snapshot for{' '}
+          {new Date().toLocaleDateString('en-US', {
+            month: 'long',
+            year: 'numeric',
+          })}
+        </p>
+      </div>
       <div className="mt-4 grid grid-cols-1 gap-3 lg:grid-cols-3">
         {overviewData.map((data, index) => (
           <OverviewCard
@@ -49,11 +59,11 @@ const page = () => {
           />
         ))}
       </div>
-      <div className="mt-3 grid grid-cols-1 lg:grid-cols-3 gap-3">
+      <div className="mt-3 grid grid-cols-1 gap-3 lg:grid-cols-3">
         <div className="rounded-xl border border-slate-200 p-3">
           <OverviewMonthlyBudget />
         </div>
-        <div className="rounded-xl border border-slate-200 p-3 col-span-2">
+        <div className="col-span-2 rounded-xl border border-slate-200 p-3">
           <OverviewDebt />
         </div>
       </div>
