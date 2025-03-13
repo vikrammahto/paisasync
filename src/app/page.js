@@ -24,7 +24,6 @@ export default function Home() {
         <Link href="." className="flex text-xl font-medium text-white">
           PaisaSync
         </Link>
-
         <nav className="flex items-center justify-center space-x-10">
           {menuItems.map((item) => (
             <a
@@ -37,7 +36,6 @@ export default function Home() {
             </a>
           ))}
         </nav>
-
         <div className="flex items-center justify-end space-x-6">
           <a
             href="https://github.com/vikrammahto/paisasync"
@@ -54,9 +52,10 @@ export default function Home() {
             Sign in
           </Link>
         </div>
+        ß
       </header>
 
-      <section className="relative pt-24 pb-10 sm:pt-32 sm:pb-16 lg:pb-24">
+      <section className="relative py-12 sm:py-24">
         <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center leading-tight text-white">
             <h1 className="text-2xl font-light lg:text-5xl">
