@@ -13,7 +13,7 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const { login, user, loading } = useAuth();
+  const { signup, user, loading } = useAuth();
   const router = useRouter();
 
   // Redirect if already logged in
@@ -32,18 +32,18 @@ const LoginPage = () => {
     }));
   };
 
-  const handleLogin = async (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
     setError('');
     setIsLoading(true);
 
     try {
-      await login(formData.email, formData.password);
-      console.log('Login successful, redirecting...');
-      router.push('/overview');
+      await signup(formData.email, formData.password);
+      console.log('Signup successful');
+      // No need to redirect here as the useEffect will handle it
     } catch (error) {
-      console.error('Login error:', error);
-      setError(error.message || 'Failed to log in');
+      console.error('Signup error:', error);
+      setError(error.message || 'Failed to sign up');
     } finally {
       setIsLoading(false);
     }
@@ -70,8 +70,8 @@ const LoginPage = () => {
   return (
     <div className="flex min-h-screen flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <h2 className="text-3xl font-medium tracking-tight">Welcome back</h2>
-        <p>Glad to see you again 👋</p>
+        <h2 className="text-3xl font-medium tracking-tight">Hi there!</h2>
+        <p>Let's get started 👋</p>
 
         <div className="space-y-6 py-8">
           {error && (
@@ -96,6 +96,7 @@ const LoginPage = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
+                  placeholder="Enter your email"
                 />
               </div>
             </div>
@@ -116,6 +117,7 @@ const LoginPage = () => {
                   required
                   value={formData.password}
                   onChange={handleChange}
+                  placeholder="Create a password"
                 />
                 <button
                   type="button"
@@ -131,38 +133,16 @@ const LoginPage = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-between">
-              <div className="flex items-center">
-                <input
-                  id="remember-me"
-                  name="remember-me"
-                  type="checkbox"
-                  className="size-4 border-gray-300"
-                />
-                <label
-                  htmlFor="remember-me"
-                  className="ms-2 block text-sm text-slate-600"
-                >
-                  Remember me
-                </label>
-              </div>
-
-              <Link
-                href="/forgot-password"
-                className="text-sm font-medium text-slate-600 hover:text-emerald-500"
+            <div className="mt-6">
+              <button
+                type="button"
+                onClick={handleSignup}
+                disabled={isLoading}
+                className="btn btn-primary w-full"
               >
-                Forgot your password?
-              </Link>
+                {isLoading ? 'Creating account...' : 'Create account'}
+              </button>
             </div>
-
-            <button
-              type="submit"
-              onClick={handleLogin}
-              disabled={isLoading}
-              className="btn btn-primary w-full"
-            >
-              {isLoading ? 'Signing in...' : 'Sign in'}
-            </button>
           </form>
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
@@ -200,12 +180,9 @@ const LoginPage = () => {
             Continue with Google
           </button>{' '}
           <p className="text-center text-sm text-slate-600">
-            Don't have an account?{' '}
-            <Link
-              href="/sign-up"
-              className="font-medium hover:text-emerald-500"
-            >
-              Sign up
+            Already have an account?{' '}
+            <Link href="/login" className="font-medium hover:text-emerald-500">
+              Log in
             </Link>
           </p>
         </div>
