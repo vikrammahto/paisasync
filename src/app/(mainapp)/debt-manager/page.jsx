@@ -7,6 +7,7 @@ import {
   ChartPie,  
   Warning,
 } from '@phosphor-icons/react';
+import AddDebtForm from '@/components/AddDebt';
 
 const page = () => {
   return (
@@ -158,6 +159,7 @@ const page = () => {
           </div>
         </div>
       </div>
+      
     </div>
   );
 };

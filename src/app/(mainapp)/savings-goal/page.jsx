@@ -10,6 +10,7 @@ import {
   GraduationCap,
   Plus,
 } from '@phosphor-icons/react';
+import AddSavingGoal from './AddSavingGoal';
 
 const page = () => {
   return (
@@ -20,7 +21,7 @@ const page = () => {
           <h1 className="font-medium">Savings Goals</h1>
           <p className="text-xs text-slate-500">Track your savings targets</p>
         </div>
-        <button className="cursor-pointer rounded-lg border border-blue-500 bg-blue-50 px-3 py-1 text-xs text-blue-500 transition duration-200 hover:bg-blue-500 hover:text-white">
+        <button className="cursor-pointer rounded-lg border border-emerald-500 bg-emerald-50 px-3 py-1 text-xs text-emerald-500 transition duration-200 hover:bg-emerald-500 hover:text-white">
           New goal
         </button>
       </div>
@@ -30,7 +31,7 @@ const page = () => {
         {/* Total Savings Card */}
         <div className="rounded-xl border border-slate-200 p-4">
           <div className="flex items-center gap-2">
-            <Coins className="text-blue-500" />
+            <Coins className="text-emerald-500" />
             <h2 className="text-sm font-medium">Total Savings</h2>
           </div>
           <div className="mt-2">
@@ -46,7 +47,7 @@ const page = () => {
         {/* Active Goals Card */}
         <div className="rounded-xl border border-slate-200 p-4">
           <div className="flex items-center gap-2">
-            <Target className="text-blue-500" />
+            <Target className="text-emerald-500" />
             <h2 className="text-sm font-medium">Active Goals</h2>
           </div>
           <div className="mt-2">
@@ -60,7 +61,7 @@ const page = () => {
         {/* Monthly Contribution Card */}
         <div className="rounded-xl border border-slate-200 p-4">
           <div className="flex items-center gap-2">
-            <ArrowUp className="text-blue-500" />
+            <ArrowUp className="text-emerald-500" />
             <h2 className="text-sm font-medium">Monthly Contribution</h2>
           </div>
           <div className="mt-2">
@@ -78,8 +79,8 @@ const page = () => {
         <div className="rounded-xl border border-slate-200 p-4">
           <div className="mb-3 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="rounded-full bg-blue-100 p-2">
-                <House className="text-blue-500" />
+              <div className="rounded-full bg-emerald-100 p-2">
+                <House className="text-emerald-500" />
               </div>
               <div>
                 <h3 className="font-medium">House Down Payment</h3>
@@ -94,7 +95,7 @@ const page = () => {
             </div>
             <div className="h-2 overflow-hidden rounded-full bg-gray-200">
               <div
-                className="h-full rounded-full bg-blue-500 transition-all"
+                className="h-full rounded-full bg-emerald-500 transition-all"
                 style={{ width: '75%' }}
               />
             </div>
@@ -199,18 +200,19 @@ const page = () => {
         </div>
 
         {/* Add New Goal Card */}
-        <div className="flex cursor-pointer items-center justify-center rounded-xl border border-dashed border-slate-300 p-4 transition-colors hover:border-blue-500 hover:bg-blue-50">
+        <div className="flex cursor-pointer items-center justify-center rounded-xl border border-dashed border-slate-300 p-4 transition-colors hover:border-emerald-500 hover:bg-emerald-50">
           <div className="text-center">
             <div className="mb-2 flex justify-center">
-              <Plus className="text-blue-500" size={24} />
+              <Plus className="text-emerald-500" size={24} />
             </div>
-            <p className="text-sm font-medium text-blue-500">Add New Goal</p>
+            <p className="text-sm font-medium text-emerald-500">Add New Goal</p>
             <p className="text-xs text-slate-500">
               Create a new savings target
             </p>
           </div>
         </div>
       </div>
+      <AddSavingGoal/>
     </div>
   );
 };

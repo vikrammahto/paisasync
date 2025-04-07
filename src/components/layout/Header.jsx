@@ -10,7 +10,7 @@ const Header = () => {
   const { toggleSidebar } = useSidebar();
   const { isSidebarOpen } = useSidebar();
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200">
+    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white">
       <div className="mx-auto flex items-center justify-between px-4 py-2 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
         <div className="flex items-center gap-2">
           <button
@@ -30,9 +30,9 @@ const Header = () => {
             width={100}
             height={100}
             alt="Vikram Mahto"
-            className="h-10 w-10 rounded-xl object-cover"
+            className="size-6 lg:size-10 rounded lg:rounded-lg object-cover"
           />
-          <div>
+          <div className='hidden md:block'>
             <h2>Vikram Mahto</h2>
             <p className="text-sm">Premium</p>
           </div>
